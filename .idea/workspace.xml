@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4ec27e3-c11f-4724-97de-6092d2742d3f" name="Default Changelist" comment="" />
+    <list default="true" id="d4ec27e3-c11f-4724-97de-6092d2742d3f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/entities/game_mechanics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/player/bot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/player/player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/player/player_base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entities/roll_dice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ui_console_impl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/ui_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lT7arXU6INx9soWbuz0eaY0c5J" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,6 +38,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/entities" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
