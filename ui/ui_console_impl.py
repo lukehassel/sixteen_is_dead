@@ -5,48 +5,47 @@ from entities.player.player_interface import PlayerInterface
 
 
 def show_start_message():
-
     print("Das Spiel hat gestartet.")
     print("Zum Beenden schreibe q. Um Neuzustarten Schreibe r")
 
 
 def show_current_player_move(player: PlayerInterface):
-    print("Spieler " + player.getName() + " ist dran.")
+    print("Spieler " + player.get_name() + " ist dran.")
 
 
 def restarting_game():
     print("Das Spiel wird neu gestartet.")
 
 
-def show_did_not_roll(player: PlayerInterface):
-    print("Spieler " + player.getName() + " hat nicht gewürfelt.")
+def show_did_not_RollState(player: PlayerInterface):
+    print("Spieler " + player.get_name() + " hat nicht gewürfelt.")
 
 
 def show_dice_move_and_points(player: PlayerInterface, dice: [int]):
     for d in dice:
-        print(player.getName() + ": hat eine " + str(d) + " gewürfelt.")
-    print(player.getName() + " hat nun " + str(player.getPoints()) + " Punkte.")
+        print(player.get_name() + ": hat eine " + str(d) + " gewürfelt.")
+    print(player.get_name() + " hat nun " + str(player.get_points()) + " Punkte.")
 
 
-def showPlayerCanNotRoll(player: PlayerInterface):
-    print(player.getName() + ": darf nicht mehr würfeln. Akueller Punktestand: " + str(player.getPoints()))
+def showPlayerCanNotRollState(player: PlayerInterface):
+    print(player.get_name() + ": darf nicht mehr würfeln. Akueller Punktestand: " + str(player.get_points()))
 
 
 # todo c)
-# todo Returns True if the Player wants to roll the dice again. False if not.
-def ask_player_to_roll_dice_or_restart_game():
+# todo Returns True if the Player wants to RollState the dice again. False if not.
+def ask_player_to_RollState_dice_or_restart_game():
     print("Zum würfeln drücke ENTER. Wenn du nicht mehr würfeln willst drücke n.")
     option = input("Deine Eingabe:")
     if option == "n":
-        return state.NextPlayer()
+        return state.NextPlayerState()
     elif option == "":
-        return state.Roll()
+        return state.RollState()
     elif option == "q":
-        return state.EndGame()
+        return state.EndGameState()
     elif option == "r":
-        return state.RestartGame()
+        return state.RestartGameState()
     else:
-        return ask_player_to_roll_dice_or_restart_game()
+        return ask_player_to_RollState_dice_or_restart_game()
 
 
 def show_player_has_to_roll_again():
@@ -56,7 +55,7 @@ def show_player_has_to_roll_again():
 
 def show_loser(player: PlayerInterface):
     print("------")
-    print("Verloren hat: " + player.getName())
+    print("Verloren hat: " + player.get_name())
     print("------")
 
 
@@ -66,4 +65,4 @@ def show_same_points():
 
 def show_points_of_all_players(players: [PlayerInterface]):
     for player in players:
-        print(player.getName() + " hat " + str(player.getPoints()) + " Punkte erreicht.")
+        print(player.get_name() + " hat " + str(player.get_points()) + " Punkte erreicht.")

@@ -4,9 +4,13 @@
     <list default="true" id="d4ec27e3-c11f-4724-97de-6092d2742d3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/game_mechanics.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/game_mechanics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/player/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/player/player_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player/player_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/player/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/player/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/roll_dice.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/roll_dice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/states/game_states.py" beforeDir="false" afterPath="$PROJECT_DIR$/entities/states/game_states.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui_console_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui_console_impl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui_interface.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,9 +138,9 @@
       <screen x="0" y="25" width="1440" height="811" />
     </state>
     <state width="1416" height="256" key="GridCell.Tab.1.right/0.25.1440.811/1440.25.1920.1055@0.25.1440.811" timestamp="1608110300427" />
-    <state x="308" y="154" width="827" height="550" key="find.popup" timestamp="1608287881211">
+    <state x="308" y="154" width="827" height="550" key="find.popup" timestamp="1608296614471">
       <screen x="0" y="25" width="1440" height="811" />
     </state>
-    <state x="308" y="154" width="827" height="550" key="find.popup/0.25.1440.811/1440.25.1920.1055@0.25.1440.811" timestamp="1608287881211" />
+    <state x="308" y="154" width="827" height="550" key="find.popup/0.25.1440.811/1440.25.1920.1055@0.25.1440.811" timestamp="1608296614471" />
   </component>
 </project>

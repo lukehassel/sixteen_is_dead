@@ -3,17 +3,20 @@ import random
 
 def roll_dice(number=1, faces=6, seed=None):
     """
-        number = Anzahl an würfeln
-        faces = Seiten des Würfels
+        A function which simulates the RollState of a dice.
+        Args:
+             number: Number of dices.
+             faces: Faces of the dice.
+             seed: To make this function return always the same random values when called.
         :returns
-            Liste mit random werten von [1...faces].
-            Die länge der liste ist definiert durch die Anzahl der Würfel
+            Returns a list with Random values in the range of 1 to faces.
+            The length of the list is defined by the Number of dices.
     """
-    rolls = []
+    RollStates = []
 
     random.seed(seed)
 
     for r in range(0, number):
-        rolls.append(random.randint(1, faces))
+        RollStates.append(random.randint(1, faces))
 
-    return rolls
+    return RollStates
