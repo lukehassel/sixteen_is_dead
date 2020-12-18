@@ -1,7 +1,7 @@
 import random
 import sys
 
-import entities.roll_dice as dice
+import entities.mechanics.roll_dice as dice
 import entities.states.game_states as states
 import ui.ui_console_impl as ui
 from entities.player.bot import Bot

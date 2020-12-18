@@ -21,6 +21,7 @@ class NextPlayerState(GameState):
     """
     pass
 
+
 class RollState(GameState):
     """
         This class represents a state in which the game can be.

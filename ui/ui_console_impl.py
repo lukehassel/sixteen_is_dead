@@ -1,3 +1,6 @@
+__author__ = "7340644, Hassel"
+__email__ = "s7114097@stud.uni-frankfurt.de"
+
 import time
 
 import entities.states.game_states as state
