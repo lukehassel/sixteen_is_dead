@@ -84,7 +84,7 @@ class GameMechanics:
             if self.can_roll(user):
                 self.user_move(user)
             else:
-                ui.showPlayerCanNotRollState(user)
+                ui.show_player_can_not_roll(user)
         elif isinstance(state, type(states.NextPlayerState())):
             pass
         elif isinstance(state, type(states.RestartGameState())):
@@ -105,7 +105,7 @@ class GameMechanics:
             for i in range(0, numberOfRollStates):
                 self.roll(bot)
         else:
-            ui.show_did_not_RollState(bot)
+            ui.show_did_not_roll(bot)
 
     def calculate_loser(self, players: [PlayerInterface]):
         """
