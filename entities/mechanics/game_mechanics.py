@@ -3,15 +3,15 @@ import sys
 
 import entities.mechanics.roll_dice as dice
 import entities.states.game_states as states
-import ui.ui_console_impl as ui
 from entities.player.bot import Bot
 from entities.player.player_interface import PlayerInterface
 from entities.player.user import User
+from ui.ui_interface import UIInterface
 
 
 class GameMechanics:
 
-    def __init__(self, players: [PlayerInterface]):
+    def __init__(self, players: [PlayerInterface], ui: UIInterface):
         """
             Constructor which initializes the game.
             A tuple gets created from the players argument and is passed to the sixteen_is_dead method.
@@ -19,6 +19,7 @@ class GameMechanics:
                  players: This argument contains a list of the PlayerInterface.
                     For more information take a look at the PlayerInterface.
         """
+        self.ui = ui
         self.players = players
 
         tuple_list = []
@@ -40,7 +41,7 @@ class GameMechanics:
         Args:
             players: A tuple list which contains the Name and a boolean which is true when the player is a bot.
         """
-        ui.show_start_message()
+        self.ui.show_start_message()
         for player in self.players:
             if not (isinstance(self.state, type(states.RestartGameState()))):
                 self.player_move(player)
@@ -49,7 +50,7 @@ class GameMechanics:
                 # return None
 
         self.calculate_loser(self.players)
-        ui.show_points_of_all_players(self.players)
+        self.ui.show_points_of_all_players(self.players)
 
     def player_move(self, player: PlayerInterface):
         """
@@ -59,7 +60,7 @@ class GameMechanics:
             players: A PlayerInterface which can represent a bot object or a user object.
                     For more information on that take a look at the bot class and the user class.
         """
-        ui.show_current_player_move(player)
+        self.ui.show_current_player_move(player)
 
         if isinstance(player, type(User(""))):
             self.user_move(player)
@@ -77,14 +78,14 @@ class GameMechanics:
                  user: Represents a user object.
                         For more information on that take a look at the the user class.
         """
-        state = ui.ask_player_to_RollState_dice_or_restart_game()
+        state = self.ui.ask_player_to_RollState_dice_or_restart_game()
         self.state = state
         if isinstance(state, type(states.RollState())):
             self.roll(user)
             if self.can_roll(user):
                 self.user_move(user)
             else:
-                ui.show_player_can_not_roll(user)
+                self.ui.show_player_can_not_roll(user)
         elif isinstance(state, type(states.NextPlayerState())):
             pass
         elif isinstance(state, type(states.RestartGameState())):
@@ -105,7 +106,7 @@ class GameMechanics:
             for i in range(0, numberOfRollStates):
                 self.roll(bot)
         else:
-            ui.show_did_not_roll(bot)
+            self.ui.show_did_not_roll(bot)
 
     def calculate_loser(self, players: [PlayerInterface]):
         """
@@ -115,9 +116,9 @@ class GameMechanics:
         """
         loser = min(players, key=lambda x: x.get_points())
         if self.is_only_loser(players, loser.get_points()):
-            ui.show_loser(loser)
+            self.ui.show_loser(loser)
         else:
-            ui.show_same_points()
+            self.ui.show_same_points()
             self.sixteen_is_dead(self.tuple)
 
     def roll(self, player: PlayerInterface):
@@ -132,14 +133,14 @@ class GameMechanics:
         """
         points = dice.roll_dice(self.DICE_COUNT, self.FACES_COUNT, self.SEED)
         player.add_points(sum(points))
-        ui.show_dice_move_and_points(player, points)
+        self.ui.show_dice_move_and_points(player, points)
         if self.has_sixteen(player):
-            ui.show_loser(player)
-            ui.show_points_of_all_players(self.players)
+            self.ui.show_loser(player)
+            self.ui.show_points_of_all_players(self.players)
             sys.exit()
         if self.has_to_roll_again(player):
             if isinstance(player, type(User(""))):
-                ui.show_player_has_to_roll_again()
+                self.ui.show_player_has_to_roll_again()
             self.roll(player)
 
     def is_only_loser(self, players: [PlayerInterface], points: int):
@@ -208,7 +209,7 @@ class GameMechanics:
             at the PlayerInterface.
             The state of the game is set to the GameInitialState and the sixteen_is_dead method is called again.
         """
-        ui.restarting_game()
+        self.ui.restarting_game()
         for player in self.players:
             player.reset_points()
         self.state = states.GameInitialState()
