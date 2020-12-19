@@ -7,6 +7,12 @@ from entities.player.user import User
 from ui.factory.ui_console_factory import UIConsoleFactory
 
 if __name__ == '__main__':
+    """
+        This method starts the program.
+        It asks for the user for a name and initializes the ui.
+        Then it will create a list of all the players.
+        It will pass this as parameters to the GameMechanics class.
+    """
     name = input("Gebe deinen Namen hier ein:")
 
     console_ui = UIConsoleFactory().initUI()
