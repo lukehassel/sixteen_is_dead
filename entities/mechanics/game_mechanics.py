@@ -31,9 +31,9 @@ class GameMechanics:
         self.tuple = tuple_list
         self.sixteen_is_dead(tuple_list)
 
-    DICE_COUNT = 3
+    DICE_COUNT = 1
     FACES_COUNT = 6
-    SEED = 123
+    SEED = 7
     state = states.GameInitialState()
 
     def sixteen_is_dead(self, players):
@@ -52,15 +52,15 @@ class GameMechanics:
                 pass
                 # return None
 
-        self.calculate_loser(self.players)
         self.ui.show_points_of_all_players(self.players)
+        self.calculate_loser(self.players)
 
     def player_move(self, player: PlayerInterface):
         """
         A method which calls the user_move method if the player object is a user.
         If not it calls the bot_move method.
         Args:
-            players: A PlayerInterface which can represent a bot object or a user object.
+            player: A PlayerInterface which can represent a bot object or a user object.
                     For more information on that take a look at the bot class and the user class.
         """
         self.ui.show_current_player_move(player)

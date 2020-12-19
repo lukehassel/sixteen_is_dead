@@ -15,11 +15,11 @@ def roll_dice(number=1, faces=6, seed=None):
             Returns a list with Random values in the range of 1 to faces.
             The length of the list is defined by the Number of dices.
     """
-    RollStates = []
+    roll = []
 
     random.seed(seed)
 
     for r in range(0, number):
-        RollStates.append(random.randint(1, faces))
+        roll.append(random.randint(1, faces))
 
-    return RollStates
+    return roll

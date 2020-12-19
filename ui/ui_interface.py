@@ -48,6 +48,7 @@ class UIInterface(ABC):
             Args:
                 player: This represents a bot class or a user class.
                         For more information on that take a look at the the bot  or user class.
+                dice: A list of the thrown dices.
         """
         pass
 

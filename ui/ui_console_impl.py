@@ -94,5 +94,7 @@ class UIConsoleImpl(UIInterface):
         """
             For more information about on what this method is implementing take a look at the UIInterface.
         """
+        print("-----Punktestand-----")
         for player in players:
             print(player.get_name() + " hat " + str(player.get_points()) + " Punkte erreicht.")
+        print("-----Punktestand-----")
